@@ -4,5 +4,5 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "rembg[cpu]==2.0.75",
-    "rawpy",
+    "rawpy==0.26.1",
 ]

@@ -217,7 +217,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "rawpy" },
+    { name = "rawpy", specifier = "==0.26.1" },
     { name = "rembg", extras = ["cpu"], specifier = "==2.0.75" },
 ]
 

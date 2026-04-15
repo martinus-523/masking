@@ -41,8 +41,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Create a black/white or soft grayscale subject mask using rembg with a selectable local ONNX model."
     )
-    parser.add_argument("input_image", help="Path to the input image")
-    parser.add_argument("output_image", help="Path to the output mask image")
+    parser.add_argument("input_image", nargs="?", help="Path to the input image")
+    parser.add_argument("output_image", nargs="?", help="Path to the output mask image")
     parser.add_argument(
         "--model",
         choices=["bria-rmbg", "u2net", "u2netp", "birefnet-massive", "isnet", "sam"],
@@ -61,6 +61,9 @@ def main() -> None:
         help="Preserve soft grayscale edges instead of converting the mask to pure black and white",
     )
     args = parser.parse_args()
+
+    if not args.input_image or not args.output_image:
+        parser.error("both input_image and output_image are required")
 
     base_dir = Path(__file__).resolve().parent
     input_path = Path(args.input_image)
