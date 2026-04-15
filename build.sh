@@ -1,0 +1,1 @@
+uv run pyinstaller --onefile --collect-all=pymatting --collect-all=rembg --collect-all=onnxruntime create_mask.py
